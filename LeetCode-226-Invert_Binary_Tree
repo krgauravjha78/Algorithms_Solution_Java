@@ -58,3 +58,29 @@ class Solution {
 
 Solution 2 (Iteration):
 
+class Solution {
+    public TreeNode invertTree(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.add(root);
+        
+        while(!queue.isEmpty()){
+            TreeNode currentNode = queue.poll();
+            TreeNode tempNode = currentNode.left;
+            currentNode.left = currentNode.right;
+            currentNode.right = tempNode;
+            
+            if(currentNode.left != null){
+                queue.add(currentNode.left);
+            }
+            
+            if(currentNode.right != null){
+                queue.add(currentNode.right);
+            }
+        }
+        return root;
+    }
+}
+
