@@ -13,7 +13,7 @@ Example 2:
 Input: [2,2,1,1,1,2,2]
 Output: 2
 
-Solution : -
+Solution 1: -
 
 class Solution {
     public int majorityElement(int[] nums) {
@@ -38,3 +38,15 @@ class Solution {
         
     }
 }
+
+Solution 2: -
+
+class Solution {
+    public int majorityElement(int[] nums) {
+        
+        Arrays.sort(nums);
+        return nums[nums.length/2];
+        
+    }
+}
+
